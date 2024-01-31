@@ -4,78 +4,11 @@ import Post from "./classes/post.js";
 
 //DBs
 
-var userDB = [
-  {
-    id: 0,
-    username: "hsck98",
-    password: "Lifegood98",
-    email: "hsck98@gmail.com"
-  },
-  {
-    id: 1,
-    username: "wendy",
-    password: "wendy123",
-    email: "wendy@gmail.com"
-  }
+var userDB = [];
 
-];
+var genreDB = [];
 
-var genreDB = [
-  {
-    id: 0,
-    userId: 0,
-    genreName: "Learning",
-  },
-  {
-    id: 1,
-    userId: 0,
-    genreName: "Games",
-  },
-  {
-    id: 2,
-    userId: 1,
-    genreName: "Trips"
-  }
-]
-
-var postDB = [
-  {
-    id: 0,
-    userId: 0,
-    genreId: 0,
-    img: "images/overcooked.png",
-    title: "Overcooked",
-    description: "Chaotic couch co-op cooking game for one to four players. You and your fellow chefs must prepare, cook and serve up orders before the buying customers storm out in a huff.",
-    blog: "",
-  },
-  {
-    id: 1,   
-    userId: 0,
-    genreId: 0,
-    img: "images/cs2.png",
-    title: "Counter Strike 2",
-    description: "Multiplayer tactical first-person shooter game developed and published by Valve.",
-    blog: "<p><strong>Counter-Strike 2</strong> is a 2023 multiplayer tactical first-person shooter game developed and published by Valve. It is the fifth main installment of the Counter-Strike series. Developed as an updated version of the previous main entry, Counter-Strike: Global Offensive (2012), it was announced on March 22, 2023 and was released on September 27, 2023, replacing Global Offensive on Steam. Like its predecessor, the game pits two teams, the Counter-Terrorists and the Terrorists, against each other in various objective-based game modes. Counter-Strike 2 features major technical improvements over Global Offensive, including a move from the Source game engine to Source 2, improved graphics and new server architecture. In addition, many maps from Global Offensive were updated to use the features of Source 2, with some maps receiving complete overhauls. Upon release, Counter-Strike 2 received generally favorable reviews from critics. In contrast, player reception was mixed; criticism was directed at the delisting of Global Offensive from Steam, degraded game performance, and the removal of several features that had been present in Global Offensive. As a result, Counter-Strike 2 received thousands of negative user reviews on Steam, leading to it becoming one of the lowest-rated Valve titles on the platform.</p>",
-  },
-  {
-    id: 2,
-    userId: 0,
-    genreId: 0,
-    img: "images/lol.png",
-    title: "League of Legends",
-    description: "Multiplayer online battle arena video game developed and published by Riot Games.",
-    blog: "",
-  },
-  {
-    id: 3,
-    userId: 1,
-    genreId: 0,
-    img: "images/stardew.png",
-    title: "Stardew Valley",
-    description: 'Farm life simulation game developed by Eric "ConcernedApe" Barone.',
-    blog: "",
-  }
-];
+var postDB = [];
 
 export function usernameExists(username) {
   var exists = false;
