@@ -1,0 +1,129 @@
+.blog-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.genres {
+  padding: 0 35rem;
+  margin-bottom: 5rem;
+  gap: 50px;
+}
+
+.genre {
+  font-size: 25px;
+  cursor: pointer;
+  color: inherit;
+}
+
+.genre:hover {
+  opacity: 0.7;
+}
+
+.activeGenre {
+  color: blue;
+}
+
+.posts {
+  height: 510px;
+  position: relative;
+}
+
+.slide-container {
+  height: 100%;
+  gap: 0px;
+}
+
+.card {
+  width: 380px;
+  height: 550px;
+  position: relative;
+}
+
+.card-img {
+  width: 380px;
+  height: 380px;
+  object-fit: cover;
+}
+
+.close {
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+
+.close img {
+  height: 15px;
+  width: 15px;
+}
+
+.card-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.prev, .next {
+  height: 30px;
+  width: 30px;
+  background: transparent;
+}
+
+.prev-overlay {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  cursor: pointer;
+}
+
+.next-overlay {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  cursor: pointer;
+}
+
+.emptySlide:not(.mt-4)  {
+  font-size: 2rem;
+  height: 12rem;
+}
+
+.blur {
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+}
+
+.anchorPost {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* #overlay {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(255,255,255,.8);
+  z-index: 1;
+}
+
+.editPost {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+} */

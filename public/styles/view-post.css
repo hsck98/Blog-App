@@ -1,0 +1,44 @@
+.view-post-container {
+  margin: 0 10rem;
+}
+
+.view-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 40px;
+  align-items: center;
+  width: 800px;
+}
+
+.view-post-uploaded-img {
+  object-fit: cover;
+  height: 10rem;
+  width: 10rem;
+}
+
+.view-post-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 5px;
+  font-size: 1rem;
+}
+
+.view-post-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.view-post-description {
+}
+
+.view-post-blog {
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+
+.edit-button {
+  margin: 2rem 1rem;
+  float: right;
+}

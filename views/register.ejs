@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSCK98 | Register</title>
+    <%- include("partials/links.ejs") %>
+    <link rel="stylesheet" href="styles/register.css">
+  </head>
+  <body>
+    <form action="/register" method="POST">
+      <div class="registration-form">
+        <div class="row">
+          <div class="register-left">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Username" value="<% if(locals.username) { %><%= username %><% } %>">
+            <span class="error">
+              <% if (locals.errors) { %>
+                <%= errors.username %>
+              <% } %>
+            </span>
+          </div>
+          <div class="register-right">
+            <label for="email">Email Address</label>
+            <input id="email" name="email" type="email" placeholder="Email address" value="<% if(locals.email) { %><%= email %><% } %>">
+            <span class="error">
+              <% if (locals.errors) { %>
+                <%= errors.email %>
+              <% } %>
+            </span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="register-left">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Password">
+            <span class="error">
+              <% if (locals.errors) { %>
+                Your password must have:
+                <ul>
+                <% errors.password.forEach((error) => { %>
+                  <li class="error"><%= error %></li>
+                <% }) %>
+                </ul>
+              <% } %>
+            </span>
+          </div>
+          <div class="register-right">
+            <label for="confirmPw">Confirm Password</label>
+            <input id="confirmPw" name="confirmPw" type="password" placeholder="Confirm password">
+            <span class="error">
+              <% if (locals.errors) { %>
+                <%= errors.confirmPw %>
+              <% } %>
+              </span>
+          </div>
+        </div>
+        <div>
+          <div class="submit-button">
+            <input type="submit" value="Register">
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

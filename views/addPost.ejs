@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSCK98 | Post</title>
+    <%- include("partials/links.ejs") %>
+    <link rel="stylesheet" href="styles/add-post.css">
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+
+    <section>
+      <div class="add-post-container">
+        <form class="add-post-form" action="<% if (locals.post) { %>/edit-post<% } else { %>/add-post<% } %>" method="POST" enctype="multipart/form-data">
+          <input id="user-id" type="hidden" value="<%= loggedUser.id %>" name="user-id">
+          <% if (locals.post) { %>
+            <input id="post-id" type="hidden" value="<%= post.id %>" name="post-id">
+          <% } %>
+          <div class="form-split">
+            <div class="drop_zone form-img" ondrop="dropHandler(event);">
+              <% if (locals.post) { %>
+                <img id="uploaded_img" src="<%= post.img %>" alt="your image" />
+              <% } else { %>
+                <img id="default_upload_img" src="images/picture.png" alt="Upload image" />
+                <img id="uploaded_img" class="d-none" src="#" alt="your image" />
+              <% } %>
+            </div>
+            <div class="form-title-genre">
+              <div class="form-group form-title">
+                <label for="post-title">Title</label>
+                <input id="post-title" class="form-control" name="post-title" type="text"value="<% if (locals.post) {%><%= post.title %><%}%>"  required>             
+              </div>
+              <div class="form-group form-genre">
+                <label for="genre">Genre</label>
+                <select id="genre" class="form-control" name="genre" required>
+                  <% genres.forEach((genre) => { %>
+                    <option value=<%= genre.id %> <% if (locals.post && post.genreId == genre.id) {%>selected<% }%>><%= genre.genreName %></option>
+                  <% }); %>
+                  <option value="newGenre">New genre</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <% if (genres.length) { %>
+          <div class="form-group form-new-genre d-none">
+          <% } else { %>
+          <div class="form-group form-new-genre">
+          <% } %>
+            <label id="genre-name-label" for="genre-name">New genre name</label>
+            <input id="genre-name" class="form-control" name="genre-name" type="text">
+          </div>
+          <div class="form-group form-img-url">
+            <input id="image_upload" class="form-control" name="image_upload" type="file" onchange="readURL(this)"/>
+          </div>
+          <div class="form-group form-description">
+            <label for="post-description">Description</label>
+            <textarea id="post-description" class="form-control" name="post-description" type="text" required><% if (locals.post) {%><%= post.description %><%}%></textarea>
+          </div>
+          <div class="form-group form-blog">
+            <label for="post-blog">Blog</label>
+            <textarea id="post-blog" name="post-blog"><% if (locals.post) {%><%= post.blog %><%}%></textarea>
+          </div>
+          <div class="form-group form-submit">
+            <div class="preview-container"><input id="post-preview" class="form-control btn btn-primary" type="preview" value="Preview"></div>
+            <div class="save-buttons">
+              <input id="post-save-draft" class="form-control btn btn-primary" type="save-draft" value="Save Draft">
+              <input id="post-submit" class="form-control btn btn-primary" type="submit" value="<% if (locals.post) { %>Update <% } else { %> Add <% } %>">
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+    <%- include("partials/scripts.ejs") %>
+    <script src="https://cdn.tiny.cloud/1/w8re87qbh1vg6nclnyr4yk7l8ctyauk4mw008dthkn3fqxrz/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="js/tinymce.js"></script>
+  </body>
+</html>

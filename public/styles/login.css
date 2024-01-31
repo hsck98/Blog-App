@@ -1,0 +1,26 @@
+.login-container {
+  height: 100vh;
+  align-items: center;
+}
+
+.login-slogan {
+  margin-bottom: 5rem;
+}
+
+.login-form {
+  width: 250px;
+  margin: 4rem;
+}
+
+.login-form input {
+  margin-top: 1rem;
+}
+
+.login-register {
+  margin-top: 10px;
+  text-align: end;
+}
+
+.form-control {
+  border-color: rgb(169, 167, 167);
+}

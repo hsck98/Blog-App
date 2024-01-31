@@ -1,0 +1,100 @@
+.add-post-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  margin: 0 15rem;
+  font-size: 16px;
+  height: 900px;
+  gap: 2rem;
+}
+
+/* Editor CSS ***/
+
+.add-post-container form {
+  width: 100%;
+}
+
+.form-split{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.drop_zone {
+  height: 200px;
+  width: 200px;
+  min-height: 50px;
+  min-width: 50px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2%;
+}
+
+#default_upload_img {
+  height: 180px;
+  width: 180px;
+}
+
+#uploaded_img {
+  height: 180px;
+  width: 180px;
+  border-radius: 2%;
+  object-fit: cover;
+}
+
+#image_upload {
+  margin-top: 10px;
+}
+
+.form-title-genre {
+  flex: auto;
+}
+
+.add-post-container .form-group label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-genre,
+.form-new-genre,
+.form-img-url,
+.form-description,
+.form-blog {
+  margin-top: 1rem;
+}
+
+.form-description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#post-description {
+  flex: 1;
+}
+
+.form-submit {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.save-buttons {
+  display:flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-control.btn {
+  width: 100px;
+}

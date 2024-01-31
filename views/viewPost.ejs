@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSCK98 | View Post</title>
+    <%- include("partials/links.ejs") %>
+    <link class="view-post-link" rel="stylesheet" href="styles/view-post.css">
+  </head>
+  <body>
+    <%- include("partials/header.ejs") %>
+    <section>
+      <div class="view-post-container">
+          <div class="view-post">
+          <div class="view-post-img">
+            <img class="view-post-uploaded-img" src="<%= post.img %>" alt="your image" />
+          </div>
+          <div class="view-post-details">
+            <div><span class="view-post-title"><%= post.title %></span>&emsp;written by <a href="/?user=<%= currentUser.id %>"><%= currentUser.username %></a></div>
+            <div class="view-post-description"><%= post.description %></div>
+          </div>
+        </div>
+        <div class="view-post-blog"><%- post.blog %></div>
+        <% if(locals.canEdit) { %>
+        <a class="edit-button" href="/edit-post?id=<%= post.id %>"><button class="btn btn-primary">Edit</button></a>
+        <% } %>
+      </div>
+    </section>
+
+    <%- include("partials/footer.ejs") %>
+    <%- include("partials/scripts.ejs") %>
+  </body>
+</html>

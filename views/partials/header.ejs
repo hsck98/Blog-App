@@ -1,0 +1,21 @@
+</head>
+<body>
+<header>
+  <nav class="navbar navbar-expand-md navbar-custom fixed-top">
+    <div>
+      <a class="navbar-brand" href="/">Narrator</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <% if (locals.canEdit) { %>
+        <% if (canEdit) { %>
+          <a href="/add-post"><button class="btn btn-outline-primary">Add Post</button></a>
+        <% } %>
+      <% } %>
+      <a href="/users">Users</a>
+      <a href="/logout">Log out</a>
+    </div>
+  </nav>
+</header>
